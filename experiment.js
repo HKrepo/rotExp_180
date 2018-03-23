@@ -25,8 +25,8 @@ var experiment = {
     maxBlocks: 1,
     maxTrials: 16,
     delay: 1000, //ms
-    timer: 1000, //ms
-    timeConstraint: false,
+    timer: 1200, //ms
+    timeConstraint: true,
 
 
     next:
