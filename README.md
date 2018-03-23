@@ -4,7 +4,7 @@ from the doll's perspective. The orientation of the doll switches randomly betwe
 While the configuration of the boxes remain the same, their orientation can vary  randomly between
 <code>maxNegDeviation</code> and <code>maxPosDeviation</code>. (all three parameters can be found in drawings.js)
 
-A time constraint can be activated in experiment.js by setting <code>timeConstraint<c/code> to <i>true</i>. We can further set the <code>delay</code> and time limit with <code>timer</code>
+A time constraint can be activated in experiment.js by setting <code>timeConstraint</code> to <i>true</i>. We can further set the <code>delay</code> and time limit with <code>timer</code>
 
 
 #### libraries
