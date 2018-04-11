@@ -322,12 +322,16 @@ function generateBoxes(numberOfBoxes) {
                     layer: true, draggable: false, name: boxArray[i],
                     fillStyle: "#bdbec9",
                     x: xCenter, y: yCenter - boxWH * 2,
-                    width: boxWH, height: boxWH,
+                    width: boxWH, height: boxWH, data: {running: false},
                     click: function (layer) {
+
+                      // layer.data.running to simulate jQuery's "one"
+                      if (!layer.data.running) {
+
+                        layer.data.running = true;
 
                         // clicked!
                         hit = true;
-
 
                         if (perspectiveElem === 0 && layer.name === boxArray[egoToDoll(boxElem, dollRotationElem)] ||
                             perspectiveElem === 1 && layer.name === boxArray[boxElem]) {
@@ -383,6 +387,12 @@ function generateBoxes(numberOfBoxes) {
                             }, 1000)
 
                         }
+
+                        layer.data.running = false;
+                        
+                      }
+
+
                     }
                 }
             )
