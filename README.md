@@ -1,6 +1,5 @@
 In this experiment, a figure (doll) is presented in the middle of the canvas. Two boxes surround the doll.
-At each trial, subjects are asked to click on one of the boxes either from the perspective of a subject's avatar or
-from the doll's perspective. The orientation of the doll switches randomly between 0° and 180°. With <code>dollRotationArray</code> could change the rotation sequences, for example, to 90° intervals.
+At each trial, subjects are asked to choose one of the boxes by pressing the corresponding key (the box on the left side of the screen with "f" / the box on the right side of the screen with "j"). They have to do this either from the perspective of a subject's avatar or from the doll's perspective. The orientation of the doll switches randomly between 0° and 180°. With <code>dollRotationArray</code> could change the rotation sequences, for example, to 90° intervals.
 While the configuration of the boxes remain the same, their orientation can vary  randomly between
 <code>maxNegDeviation</code> and <code>maxPosDeviation</code>. (all three parameters can be found in drawings.js)
 

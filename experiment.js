@@ -46,7 +46,7 @@ var experiment = {
                 return
             }
 
-            // Shuffle the 32 conditions initially and after each block
+            // Shuffle the conditions initially and after each block
             if (this.practiceTrial || this.trial === 1 && hit === false || whichElem + 1 === this.trialsPerBlock) {
 
                 new_index = Array.from(Array(experiment.trialsPerBlock).keys())
@@ -74,7 +74,7 @@ var experiment = {
             setTimeout(function () {
                 generateBoxes(2);
                 startTime = (new Date()).getTime();
-            }, this.delay); //2000
+            }, this.delay);
 
 
             this.trial = this.trial + 1;

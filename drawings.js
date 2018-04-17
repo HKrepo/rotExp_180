@@ -91,8 +91,7 @@ var whichElem,
 
 
 // Normalize the click event by using jQuery for cross-browser compatibility
-var event = jQuery.Event("click");
-
+var event = jQuery.Event("keydown");
 
 // Prepare the data array
 var myData = {
@@ -323,7 +322,7 @@ function generateBoxes(numberOfBoxes) {
                     fillStyle: "#bdbec9",
                     x: xCenter, y: yCenter - boxWH * 2,
                     width: boxWH, height: boxWH, data: {running: false},
-                    click: function (layer) {
+                    fn: function (layer) {
 
                       // layer.data.running to simulate jQuery's "one"
                       if (!layer.data.running) {
@@ -389,7 +388,7 @@ function generateBoxes(numberOfBoxes) {
                         }
 
                         layer.data.running = false;
-                        
+
                       }
 
 
@@ -401,4 +400,26 @@ function generateBoxes(numberOfBoxes) {
                 layer: true
             })
     }
+
+    // We trigger the box layers by pressing "f" or "j" on the keyboard
+
+    $(document).one("keydown", function(event){
+      var keyCode = event.which
+      if (keyCode == 74){ // "j" key
+
+      // if boxRotation is 90, the right box is indeed labeled as "right"
+        if (boxRotation == 90){
+          $("#myCanvas").triggerLayerEvent('right', 'fn');
+        } else {
+          $("#myCanvas").triggerLayerEvent('left', 'fn');
+        }
+      } else if (keyCode == 70) { //"f" key
+        if (boxRotation == 270){
+          $("#myCanvas").triggerLayerEvent('right', 'fn');
+        } else {
+          $("#myCanvas").triggerLayerEvent('left', 'fn');
+        }
+      }
+    })
+
 }
