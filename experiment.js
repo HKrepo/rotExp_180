@@ -27,13 +27,17 @@ var experiment = {
     delay: 1000, //ms
     timer: 1200, //ms
     timeConstraint: true,
+    exp_timer: 60000, //ms 60s
+    exp_startTime: (new Date()).getTime(),
 
 
     next:
         function () {
 
-            // jump to the "end" function after the last trial
-            if (this.trial > this.maxTrials) {
+            // jump to the "end" function after the last trial or after the general timeout
+            exp_endTime = (new Date()).getTime()
+
+            if ( ((exp_endTime-this.exp_startTime)>this.exp_timer) || (this.trial > this.maxTrials) ) {
                 this.end();
                 return
             }
